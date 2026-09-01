@@ -1,29 +1,43 @@
 # 📚 Concept Notes
 
-개발 공부를 하면서 배운 개념을 정리하고 복습하기 위한 학습 저장소
+개발 공부를 하면서 배운 개념을 정리하고 복습하기 위한 개인 학습 저장소
 
-Python, Git/GitHub, Database, Pandas, NumPy 등
-학습한 내용을 **개념별로 정리하여 기록**
+Python, Git/GitHub, Database, NumPy, Pandas, Crawling, Data Visualization 등
+학습한 내용을 **주제별 · 개념별로 정리하여 기록**
 
 ---
 
 ## 📂 Categories
 
-* Python
-* Git / GitHub
-* Database
-* Pandas
-* NumPy
-* Crawling
-* Streamlit
+```text
+concept-notes/
+├── 01_python-basics/
+├── 02_python-functions/
+├── 03_python-oop/
+├── 04_python-library/
+├── 05_streamlit/
+├── 06_programming/
+├── 07_numpy/
+├── 08_pandas/
+├── 09_database/
+├── 10_git-github/
+├── 11_crawling/
+└── 12_visualization/
+```
 
-추가 예정
+각 폴더 안의 개념 노트는 학습 흐름에 따라 번호를 붙여 관리
+
+```text
+07_numpy/
+├── 01_스칼라_벡터_행렬_shape.md
+├── 02_NumPy_axis와_배열연산.md
+├── 03_행렬곱셈.md
+└── 04_벡터관계_코사인유사도_Norm.md
+```
 
 ---
 
 ## 📝 Note Format
-
-각 개념은 아래 형식으로 정리
 
 ```text
 1. 개념
@@ -42,7 +56,8 @@ Python, Git/GitHub, Database, Pandas, NumPy 등
 
 ## 🎯 Goal
 
-* 배운 내용을 다시 정리하며 이해하기
-* 헷갈리는 개념을 쉽게 찾아보기
+* 배운 내용을 다시 정리하며 개념 이해하기
+* 주제별로 개념을 분류해 쉽게 찾아보기
+* 헷갈리는 개념을 비교하며 정리하기
 * 자주 사용하는 문법과 코드 기록하기
 * 꾸준히 복습할 수 있는 학습 자료 만들기
