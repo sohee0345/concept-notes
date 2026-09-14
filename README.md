@@ -14,9 +14,9 @@
 concept-notes/
 ├── Git/
 ├── Python/
-├── 개발환경/
 ├── 데이터베이스/
 ├── 데이터분석/
+├── 딥러닝/
 ├── 머신러닝/
 └── 웹·API/
 ```
@@ -26,11 +26,11 @@ concept-notes/
 | Category | Contents |
 | --- | --- |
 | **Git** | Git 기본 흐름, Branch, Merge, GitHub, SSH |
-| **Python** | Python 기초 문법, 함수, 객체지향, 개발 환경 및 도구 |
-| **개발환경** | Docker, WSL 등 개발 환경 구성 |
+| **Python** | Python 기초 문법, 함수, 객체지향, 환경 및 도구 |
 | **데이터베이스** | Database 설계, MySQL, SQL |
 | **데이터분석** | NumPy, Pandas, 통계, EDA, 데이터 시각화 |
-| **머신러닝** | 데이터 전처리, 모델 학습 및 평가, Machine Learning 기본 개념 |
+| **머신러닝** | 데이터 전처리, 모델 학습, 평가, Machine Learning 기본 개념 |
+| **딥러닝** | Deep Learning 기본 개념과 신경망 학습 내용 |
 | **웹·API** | HTTP, Open API, Web Crawling, Streamlit |
 
 ---
@@ -59,7 +59,7 @@ concept-notes/
 ## 🎯 Goal
 
 - 배운 내용을 다시 정리하며 개념을 정확하게 이해한다.
-- Python부터 데이터 분석과 머신러닝까지 학습 흐름을 연결해서 이해한다.
+- Python부터 데이터 분석, 머신러닝, 딥러닝까지 학습 흐름을 연결해서 이해한다.
 - 주제별로 개념을 분류하여 필요한 내용을 빠르게 찾아볼 수 있도록 한다.
 - 헷갈리는 개념과 비슷한 개념을 비교하며 정리한다.
 - 자주 사용하는 문법과 코드를 기록하고 반복해서 복습한다.
@@ -71,9 +71,10 @@ concept-notes/
 
 현재 다음 내용을 중심으로 학습하며 노트를 추가하고 있다.
 
-`Python` · `Git/GitHub` · `Docker` · `MySQL` · `SQL`  
+`Python` · `Git/GitHub` · `MySQL` · `SQL`  
 `NumPy` · `Pandas` · `EDA` · `Data Visualization`  
-`Machine Learning` · `Open API` · `Web Crawling` · `Streamlit`
+`Machine Learning` · `Deep Learning`  
+`Open API` · `Web Crawling` · `Streamlit`
 
 ---
 
