@@ -1,42 +1,57 @@
+---
+source:
+  - "[[02 정리노트/week06/day22_09.07]]"
+---
+
 # Sigmoid와 Softmax
 
 ## 1. 개념
 
-Sigmoid와 Softmax는 모델이 출력한 실수 점수인 로짓을 확률처럼 해석할 수 있는 값으로 변환한다. Sigmoid는 각 출력에 독립적으로 적용할 수 있고, Softmax는 여러 클래스가 서로 배타적인 다중분류에서 전체 합을 1로 만든다.
+Sigmoid는 실수 하나를 0과 1 사이 값으로 바꾸고 Softmax는 여러 클래스의 로짓을 합이 1인 확률 분포로 바꾼다.
 
-> **핵심:** Sigmoid는 각 출력을 독립적으로 변환하고, Softmax는 여러 출력을 합이 1인 확률 분포로 변환한다.
+> **핵심:** Sigmoid는 주로 이진 분류, Softmax는 서로 배타적인 다중분류의 확률을 만든다.
 
 ---
 
-## 2. 사용 방법
+## 2. 쉽게 이해하기
 
-```python
-import numpy as np
+Sigmoid는 점수 하나를 양성 확률로, Softmax는 여러 점수를 클래스별 확률로 변환한다.
 
-def sigmoid(x):
-    return 1 / (1 + np.exp(-x))
-
-def softmax(x):
-    x = x - np.max(x, axis=-1, keepdims=True)
-    exp_x = np.exp(x)
-    return exp_x / exp_x.sum(axis=-1, keepdims=True)
+```text
+점수 1개 → Sigmoid → 0~1
+로짓 여러 개 → Softmax → 합이 1인 확률들
 ```
 
-- 이진분류의 Sigmoid 출력 하나는 보통 양성 클래스 확률을 뜻한다.
-- 다중레이블 분류에서는 레이블별 Sigmoid를 독립적으로 사용할 수 있다.
-- 서로 배타적인 다중분류에서는 Softmax를 사용해 클래스 확률의 합을 1로 만든다.
+---
 
-`predict_proba()`가 이미 반환한 확률에는 Softmax를 다시 적용하지 않는다.
+## 3. 사용 방법
+
+$$\sigma(z)=\frac{1}{1+e^{-z}}$$
+
+```python
+def softmax(x):
+    shifted = x - np.max(x, axis=-1, keepdims=True)
+    exp_x = np.exp(shifted)
+    return exp_x / np.sum(exp_x, axis=-1, keepdims=True)
+```
+
+최댓값을 먼저 빼면 지수 계산이 지나치게 커지는 것을 막는다.
 
 ---
 
-## 3. 헷갈리는 개념 비교
+## 4. 예제
 
-| 구분 | Sigmoid | Softmax |
-| --- | --- | --- |
-| 출력 관계 | 각 출력이 독립적 | 출력들이 서로 경쟁 |
-| 합 | 반드시 1이 아님 | 전체 합이 1 |
-| 대표 용도 | 이진분류, 다중레이블 | 서로 배타적인 다중분류 |
+다중분류의 `predict_proba()` 결과는 이미 클래스 확률이므로 Softmax를 다시 적용하지 않는다.
+
+---
+
+## 5. 헷갈리는 개념 비교
+
+|구분|Sigmoid|Softmax|
+|---|---|---|
+|입력|점수 하나|클래스별 로짓|
+|출력|0~1 값|합이 1인 확률 분포|
+|주요 사용|이진 분류|다중분류|
 
 ---
 
@@ -44,18 +59,25 @@ def softmax(x):
 
 ### 💡 주요 개념
 
-| 개념 | 의미 |
-| --- | --- |
-| `로짓` | 확률로 변환하기 전 모델이 출력한 실수 점수 |
-| `Sigmoid` | 각 로짓을 독립적인 0과 1 사이의 값으로 변환 |
-| `Softmax` | 여러 로짓을 합이 1인 확률 분포로 변환 |
+|개념|의미|
+|---|---|
+|로짓|확률 변환 전 모델 점수|
+|Sigmoid|점수를 0~1로 변환|
+|Softmax|여러 로짓을 확률 분포로 변환|
+
+### 💻 주요 코드
+
+|코드|의미|
+|---|---|
+|`1 / (1 + np.exp(-x))`|Sigmoid 계산|
+|`x - np.max(x)`|Softmax 수치 안정화|
 
 ### ⭐ 한 줄 정리
 
-> **Sigmoid는 각 점수를 독립적인 0~1 값으로, Softmax는 여러 점수를 하나의 확률 분포로 변환한다.**
+> **Sigmoid와 Softmax는 모델 점수를 이진 또는 다중 클래스 확률로 변환한다.**
 
 ### 🔖 복습할 내용
 
-- [ ] Sigmoid와 Softmax의 출력 관계 비교하기
-- [ ] 이진분류·다중레이블·다중분류에 맞는 함수 선택하기
-- [ ] `predict_proba()` 결과에 Softmax를 다시 적용하면 안 되는 이유 설명하기
+- [ ] 두 함수의 사용 상황 구분하기
+- [ ] Softmax 출력 합 설명하기
+- [ ] predict_proba에 재적용하지 않기
