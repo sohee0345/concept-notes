@@ -43,6 +43,16 @@ df.info()
 
 ## 4. 예제
 
+```python
+import pandas as pd
+
+df = pd.read_csv(
+    "data.csv",
+    encoding="utf-8",
+    dtype={"지역코드": "string"},
+)
+```
+
 지역 코드 `01`은 계산값이 아니라 식별값이므로 문자열로 읽어 앞의 `0`을 보존한다. `RangeIndex: 100 entries, 0 to 99`는 행이 100개임을 뜻한다.
 
 ---

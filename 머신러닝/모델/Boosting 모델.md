@@ -34,6 +34,21 @@ Boosting은 약한 학습기를 순차적으로 추가하며 이전 모델이 �
 
 ## 4. 예제
 
+```python
+from sklearn.ensemble import GradientBoostingClassifier
+
+hp = {
+    "random_state": 0,
+    "max_depth": 1,
+    "n_estimators": 100,
+    "learning_rate": 0.2,
+}
+
+gradient = GradientBoostingClassifier(**hp).fit(X_tr, y_tr)
+print(f"훈련용 평가지표: {gradient.score(X_tr, y_tr)}")
+print(f"테스트용 평가지표: {gradient.score(X_te, y_te)}")
+```
+
 - XGBoost → 규제와 계산 효율을 강화한 구현
 - LightGBM → 손실 감소가 큰 리프를 우선 확장하는 방식
 - CatBoost → 범주형 Feature와 순서 기반 통계에 강점

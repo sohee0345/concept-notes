@@ -40,6 +40,15 @@ ratio = svd.explained_variance_ratio_.sum()
 
 ## 4. 예제
 
+```python
+from sklearn.decomposition import TruncatedSVD
+
+svd = TruncatedSVD(n_components=15)
+svd.fit(sparse_features)
+
+explained_ratio = sum(svd.explained_variance_ratio_)
+```
+
 성분 2개보다 15개를 남겼을 때 설명 분산과 검증 성능이 더 잘 보존될 수 있다. 적절한 성분 수는 데이터와 모델에 따라 검증한다.
 
 ---

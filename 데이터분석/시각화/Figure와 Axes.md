@@ -45,6 +45,18 @@ plt.show()
 
 ## 4. 예제
 
+```python
+fig, axes = plt.subplots(2, 2, figsize=(15, 5))
+fig.suptitle("도화지 제목")
+
+axes[0, 0].plot(np.arange(5))
+axes[0, 1].plot(np.arange(2, 7))
+axes[1, 0].plot(range(10), np.exp(range(10)))
+axes[1, 1].plot(range(1, 1000), np.log1p(range(1, 1000)))
+
+plt.show()
+```
+
 `plt.subplots(2, 2)`는 2행 2열의 Axes 네 개를 만들며 `axes[행, 열]`로 원하는 영역을 선택한다.
 
 ---

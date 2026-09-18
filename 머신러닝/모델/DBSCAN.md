@@ -35,6 +35,13 @@ DBSCAN은 일정 반경 안에 이웃이 충분한 영역을 연결해 군집을
 
 ## 4. 예제
 
+```python
+from sklearn.cluster import DBSCAN
+
+dbscan = DBSCAN(min_samples=3, eps=0.05, n_jobs=-1).fit(x)
+print_score(x, y, dbscan.labels_)
+```
+
 실루엣 점수가 음수라면 많은 샘플이 자신의 군집보다 다른 군집에 더 가까울 수 있으므로 `eps`, `min_samples`, 스케일과 알고리즘 적합성을 점검한다.
 
 ---

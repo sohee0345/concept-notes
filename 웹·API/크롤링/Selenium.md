@@ -41,6 +41,14 @@ driver.find_element(By.NAME, "color_input").click()
 
 ## 4. 예제
 
+```python
+from selenium import webdriver
+
+driver = webdriver.Chrome()
+driver.get("https://www.selenium.dev/selenium/web/linked_image.html")
+driver.implicitly_wait(5)
+```
+
 `implicitly_wait(5)`는 항상 5초를 멈추는 것이 아니라 요소가 바로 발견되지 않을 때 적용되는 최대 대기 시간이다.
 
 ---

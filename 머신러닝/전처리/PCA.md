@@ -40,6 +40,15 @@ ratio = pca.explained_variance_ratio_.sum()
 
 ## 4. 예제
 
+```python
+from sklearn.decomposition import PCA
+
+pca = PCA(n_components=15)
+pca.fit(sparse_features)
+
+explained_ratio = sum(pca.explained_variance_ratio_)
+```
+
 주성분을 너무 적게 남기면 정보 손실로 성능이 낮아질 수 있다. 성분 수는 누적 설명 분산 비율과 교차검증 성능을 함께 보고 정한다.
 
 ---

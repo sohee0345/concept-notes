@@ -34,6 +34,23 @@ Bagging은 여러 부트스트랩 표본으로 모델을 병렬 학습해 결과
 
 ## 4. 예제
 
+```python
+from sklearn.ensemble import RandomForestClassifier
+
+hp = {
+    "random_state": 0,
+    "max_features": "sqrt",
+    "n_estimators": 100,
+    "max_depth": 10,
+    "min_samples_split": 10,
+    "min_samples_leaf": 3,
+}
+
+forest = RandomForestClassifier(**hp).fit(X_tr, y_tr)
+print(f"훈련용 평가지표: {forest.score(X_tr, y_tr)}")
+print(f"테스트용 평가지표: {forest.score(X_te, y_te)}")
+```
+
 트리 깊이와 리프 조건을 제한해 테스트 성능을 유지하면서 train 성능과 복잡도를 낮출 수 있다.
 
 ---

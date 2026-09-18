@@ -37,6 +37,13 @@ components = nmf.components_
 
 ## 4. 예제
 
+```python
+from sklearn.decomposition import NMF
+
+nmf = NMF(n_components=5, max_iter=500)
+nmf.fit(sparse_features)
+```
+
 픽셀 강도와 단어 빈도처럼 양의 성분을 더해서 설명하기 자연스러운 데이터에 적용할 수 있다. 성분 수가 많아도 검증 성능이 좋아진다고 보장되지 않는다.
 
 ---

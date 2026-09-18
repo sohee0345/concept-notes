@@ -38,6 +38,10 @@ iris.groupby("species")[["sepal_length", "sepal_width"]].min()
 
 ## 4. 예제
 
+```python
+iris.groupby("species")["sepal_length"].agg(["mean", "max"])
+```
+
 품종별 `sepal_length`의 평균과 최댓값을 계산하면 각 품종의 대표적인 크기 차이를 비교할 수 있다.
 
 ---

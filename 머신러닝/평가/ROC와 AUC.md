@@ -39,6 +39,15 @@ RocCurveDisplay.from_predictions(y_valid, probability)
 
 ## 4. 예제
 
+```python
+from sklearn.metrics import auc, roc_curve
+
+fpr, tpr, thresholds = roc_curve(y_valid, pred_tree)
+roc_auc = auc(fpr, tpr)
+
+print(f"model: {roc_auc}")
+```
+
 AUC `0.5`는 무작위 순위 수준이고 `1`은 완벽한 구분이다. 성능 등급을 나누는 고정 구간은 분야에 따라 달라질 수 있다.
 
 ---

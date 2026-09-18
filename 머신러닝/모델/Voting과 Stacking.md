@@ -36,6 +36,19 @@ Voting은 여러 전문가의 표를 세고 Stacking은 전문가들의 답을 �
 
 ## 4. 예제
 
+```python
+from sklearn.ensemble import VotingClassifier
+
+hp = {
+    "estimators": estimators,
+    "voting": "soft",
+}
+
+voting = VotingClassifier(**hp).fit(X_tr, y_tr)
+print(f"훈련용 평가지표: {voting.score(X_tr, y_tr)}")
+print(f"테스트용 평가지표: {voting.score(X_te, y_te)}")
+```
+
 Soft Voting은 확률을 제공하는 여러 모델의 확률 평균으로 클래스를 선택한다. Stacking은 교차검증에서 얻은 기본 모델 예측으로 메타 모델을 학습한다.
 
 ---

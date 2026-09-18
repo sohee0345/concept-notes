@@ -40,6 +40,16 @@ centers = kmeans.cluster_centers_
 
 ## 4. 예제
 
+```python
+from sklearn.cluster import KMeans
+
+kmeans = KMeans(n_clusters=3)
+kmeans.fit(X)
+
+labels = kmeans.labels_
+pred = kmeans.predict(X)
+```
+
 MiniBatchKMeans는 작은 미니배치로 중심을 갱신해 대규모 데이터에서 빠르고 메모리 부담이 작지만 결과가 덜 안정적일 수 있다.
 
 ---
