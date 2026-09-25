@@ -35,20 +35,13 @@ concept-notes/
 
 ## 📝 Note Format
 
-각 개념 노트는 내용을 이해하고 복습하기 쉽도록 정리한다.
+각 개념 노트는 주제에 맞게 필요한 항목을 선택하여 정리한다.
 
-```text
-1. 개념
-2. 쉽게 이해하기
-3. 사용 방법
-4. 예제
-5. 헷갈리는 개념 비교
-
-💡 주요 개념
-💻 주요 코드
-⭐ 한 줄 정리
-🔖 복습할 내용
-```
+- 개념과 핵심 내용
+- 사용 방법 및 예제
+- 비슷하거나 헷갈리기 쉬운 개념 비교
+- 주요 코드와 한 줄 정리
+- 추가로 복습할 내용
 
 필요한 경우 표, 코드 예제, 비교 정리 등을 함께 기록한다.
 
@@ -67,12 +60,12 @@ concept-notes/
 
 ## 📌 Study Topics
 
-현재 다음 내용을 중심으로 학습하며 노트를 추가하고 있다.
-
 `Python` · `Git/GitHub` · `MySQL` · `SQL`  
 `NumPy` · `Pandas` · `EDA` · `Data Visualization`  
 `Machine Learning` · `Deep Learning`  
 `Open API` · `Web Crawling` · `Streamlit`
+
+학습 내용에 따라 새로운 주제를 계속 추가한다.
 
 ---
 
